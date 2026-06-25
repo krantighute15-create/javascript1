@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Employee Details</h2>
+
+<form>
+    Employee No:
+    <input type="text" id="empno"><br><br>
+
+    Employee Name:
+    <input type="text" id="empname"><br><br>
+
+    Timing:
+    <input type="text" id="timing" placeholder="10.30"><br><br>
+
+    <input type="button" value="Submit" onclick="showData()">
+</form>
+
+<p id="result"></p>
+
+<script>
+function showData()
+{
+    var empno = document.getElementById("empno").value;
+    var empname = document.getElementById("empname").value;
+    var timing = parseFloat(document.getElementById("timing").value);
+
+    var msg;
+
+    if(timing < 12)
+        msg = "Good Morning";
+    else
+        msg = "Good Afternoon";
+
+    document.getElementById("result").innerHTML =
+        "Emp No = " + empno + "<br>" +
+        "Emp Name = " + empname + "<br>" +
+        "Timing = " + timing + "<br><br>" +
+        "Hello " + empname + ", " + msg;
+}
+</script>
+</body>
+</html>

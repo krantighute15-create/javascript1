@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" name="" id="user" placeholder="Enter your Username">
+    <br><br>
+    <input type="password" name="" id="pass" placeholder="Enter your password">
+    <br><br>
+    <button onclick="getClick()">LOGIN</button>
+    <p id="demo"></p>
+    <div id="div"></div>
+    <script>
+        let username = 'admin'
+        let password = 'add@123'
+        let starttime
+        function getClick() {
+            let user = document.getElementById("user")
+            let pass = document.getElementById("pass")
+
+
+            if (username == user.value && password == pass.value) {
+                alert("Login successfull")
+            }
+            else {
+                var mobile = prompt("Enter your mobile number")
+                let otp = (Math.ceil(Math.random() * 1000))
+                starttime=Date.now()
+                alert("valid for 60 second"+"\nOTP is " +otp)
+                starttime=Date.now()
+                writeOtp()
+            }
+        }
+        function writeOtp()
+        {
+            let div=document.getElementById("div")
+            div.innerHTML=`<input type="text" name="" id="userOTP" placeholder="Enter OTP"><br><br><button onclick="verify()">verify</button>`
+        }
+        function verify()
+        {
+            let userOTP=document.getElementById("userOTP")
+            if(Date.now-starttime>60000)
+        {
+            p.innerHTML="OTP Expired"
+        }
+        else if(otp==userOTP.value)
+        {
+            p.innerHTML="login successfull"
+        }
+        else
+        {
+            p.innerHTML="OTP is wrong"
+        }
+        }
+
+                
+                
+            
+        
+    </script>
+</body>
+
+</html>

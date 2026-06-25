@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+.hero{
+    height:100vh;
+    background-image:
+    linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
+    url('net.png');
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+    color:white;
+}
+
+.navbar{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:25px 80px;
+}
+
+.logo{
+    color:#E50914;
+    font-size:45px;
+    font-weight:bold;
+}
+
+.signin{
+    background:#E50914;
+    color:white;
+    border:none;
+    padding:10px 20px;
+    border-radius:5px;
+    cursor:pointer;
+}
+
+.content{
+    height:80vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+}
+
+.content h1{
+    font-size:65px;
+    margin-bottom:20px;
+}
+
+.sub{
+    font-size:24px;
+    margin-bottom:20px;
+}
+
+.info{
+    font-size:18px;
+    margin-bottom:25px;
+}
+
+.email-box{
+    display:flex;
+    gap:12px;
+}
+
+.email-box input{
+    width:380px;
+    padding:18px;
+    font-size:18px;
+    background:black;
+    color:white;
+    border:1px solid #666;
+    border-radius:5px;
+    outline:none;
+}
+
+.email-box input::placeholder{
+    color:#b3b3b3;
+}
+
+.email-box button{
+    background:#E50914;
+    color:white;
+    border:none;
+    padding:18px 30px;
+    font-size:22px;
+    font-weight:bold;
+    border-radius:5px;
+    cursor:pointer;
+}
+</style>
+</head>
+<body>
+ <div class="hero">
+
+    <div class="navbar">
+        <div class="logo">NETFLIX</div>
+        <button class="signin">Sign In</button>
+    </div>
+
+    <div class="content">
+        <h1>Unlimited movies,<br>TV shows and more</h1>
+
+        <p class="sub">Starts at ₹149. Cancel at any time.</p>
+
+        <p class="info">
+            Ready to watch? Enter your email to create or restart your membership.
+        </p>
+
+        <div class="email-box">
+            <input type="email" placeholder="Email address">
+            <button>Get Started </button>
+        </div>
+    </div>
+
+</div>
+   
+</body>
+</html>

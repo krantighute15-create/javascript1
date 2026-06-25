@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Login Form</h2>
+
+<form>
+    Username:
+    <input type="text" id="uname"><br><br>
+
+    Password:
+    <input type="password" id="pass"><br><br>
+
+    <input type="button" value="Login" onclick="Login()">
+</form>
+
+<p id="msg"></p>
+
+<script>
+    var correctUsername = "abc";
+    var correctPassword = "123";
+    var attempts = 3;
+
+    function Login() {
+        var username = document.getElementById("uname").value;
+        var password = document.getElementById("pass").value;
+
+        if (username == correctUsername && password == correctPassword) {
+            document.getElementById("msg").innerHTML =
+                "Login Successfully";
+        }
+        else {
+            attempts--;
+
+            if (attempts > 0) {
+                document.getElementById("msg").innerHTML =
+                    "Invalid Username or Password. Attempts left: " + attempts;
+            }
+            else {
+                document.getElementById("msg").innerHTML =
+                    "Your Account is Freeze";
+            }
+        }
+    }
+</script>
+        
+    
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <pre id="out"></pre>
+<script>
+let p="";
+
+// 1) Square Pattern
+p += "1) Square Pattern\n";
+for(let i=1;i<=5;i++){
+    for(let j=1;j<=5;j++){
+        p += "*";
+    }
+    p += "\n";
+}
+
+// 2) Hollow Square
+p += "\n2) Hollow Square\n";
+for(let i=1;i<=5;i++){
+    for(let j=1;j<=5;j++){
+        if(i==1 || i==5 || j==1 || j==5)
+            p += "*";
+        else
+            p += " ";
+    }
+    p += "\n";
+}
+
+// 3) Left Half Pyramid
+p += "\n3) Left Half Pyramid\n";
+for(let i=1;i<=5;i++){
+    for(let j=1;j<=i;j++){
+        p += "*";
+    }
+    p += "\n";
+}
+
+// 4) Triangle
+p += "\n4) Triangle\n";
+for(let i=1;i<=5;i++){
+    for(let s=1;s<=5-i;s++)
+        p += " ";
+    for(let j=1;j<=2*i-1;j++)
+        p += "*";
+    p += "\n";
+}
+
+// 5) Hollow Triangle
+p += "\n5) Hollow Triangle\n";
+for(let i=1;i<=5;i++){
+    for(let s=1;s<=5-i;s++)
+        p += " ";
+
+    for(let j=1;j<=2*i-1;j++){
+        if(j==1 || j==2*i-1 || i==5)
+            p +="* ";
+        else
+            p +=" ";
+    }
+    p += "\n";
+}
+
+// 6) Right Triangle
+p += "\n6) Right Triangle\n";
+for(let i=5;i>=1;i--){
+    for(let j=1;j<=i;j++){
+        p += "*";
+    }
+    p += "\n";
+}
+
+document.getElementById("out").innerText = p;
+</script>
+</body>
+</html>
