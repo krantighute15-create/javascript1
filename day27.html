@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        body {
+            background: #f3f3f3;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            width: 900px;
+            background: linear-gradient(to bottom, #c82f2f, #f7b5b5);
+            padding: 25px;
+            border-radius: 25px;
+        }
+
+        h2 {
+            color: white;
+            margin-bottom: 20px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            background: white;
+            padding: 40px;
+        }
+
+        .card {
+            background: white;
+            text-align: center;
+            padding: 25px 20px;
+            transition: 0.4s;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .card:hover {
+            transform: translateY(-25px) scale(1.1);
+            box-shadow: 0 15px 25px rgba(0, 0, 0, 0.25);
+            z-index: 10;
+        }
+
+        .icon {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            background: #e6e6e6;
+            margin: auto;
+            margin-bottom: 15px;
+        }
+
+        .card:hover .icon {
+            background: linear-gradient(to bottom, #d32f2f, #1d2b64);
+        }
+
+        h3 {
+            color: #333;
+            margin-bottom: 8px;
+        }
+
+        p {
+            color: #777;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h2>Hover Effect</h2>
+
+        <div class="grid">
+
+            <div class="card">
+                <div class="icon"></div>
+                <h3>Section 1</h3>
+                <p>Lorem ipsum</p>
+            </div>
+
+            <div class="card">
+                <div class="icon"></div>
+                <h3>Section 2</h3>
+                <p>Lorem ipsum</p>
+            </div>
+
+            <div class="card">
+                <div class="icon"></div>
+                <h3>Section 3</h3>
+                <p>Lorem ipsum</p>
+            </div>
+
+            <div class="card">
+                <div class="icon"></div>
+                <h3>Section 4</h3>
+                <p>Lorem ipsum</p>
+            </div>
+
+            <div class="card">
+                <div class="icon"></div>
+                <h3>Section 5</h3>
+                <p>Lorem ipsum</p>
+            </div>
+
+            <div class="card">
+                <div class="icon"></div>
+                <h3>Section 6</h3>
+                <p>Lorem ipsum</p>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+
+</html>

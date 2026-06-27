@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+body{
+    margin:0;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+    background:#87CEEB;
+}
+
+.face{
+    width:220px;
+    height:220px;
+    background:#FFD93D;
+    border-radius:50%;
+    position:relative;
+    cursor:pointer;
+    transition:0.5s;
+    box-shadow:0 0 20px orange;
+}
+
+.eye{
+    width:40px;
+    height:40px;
+    background:white;
+    border-radius:50%;
+    position:absolute;
+    top:60px;
+    overflow:hidden;
+}
+
+.left{
+    left:50px;
+}
+
+.right{
+    right:50px;
+}
+
+.pupil{
+    width:16px;
+    height:16px;
+    background:black;
+    border-radius:50%;
+    position:absolute;
+    top:12px;
+    left:12px;
+    animation:eyesMove 2s infinite alternate;
+}
+
+.mouth{
+    width:90px;
+    height:20px;
+    background:black;
+    border-radius:0 0 50px 50px;
+    position:absolute;
+    left:65px;
+    bottom:45px;
+    transition:0.5s;
+}
+
+/* Eyes keep moving */
+@keyframes eyesMove{
+    0%{
+        transform:translateX(-6px);
+    }
+    50%{
+        transform:translateX(6px);
+    }
+    100%{
+        transform:translateX(-6px);
+    }
+}
+
+/* Hover Effect */
+.face:hover{
+    transform:scale(1.1);
+}
+
+.face:hover .mouth{
+    height:70px;
+    background:#8B0000;
+    border-radius:0 0 60px 60px;
+}
+</style>
+
+</head>
+<body>
+ <div class="face">
+
+    <div class="eye left">
+        <div class="pupil"></div>
+    </div>
+
+    <div class="eye right">
+        <div class="pupil"></div>
+    </div>
+
+    <div class="mouth"></div>
+
+</div>   
+</body>
+</html>
