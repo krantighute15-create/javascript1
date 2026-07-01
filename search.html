@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            text-align: center;
+        }
+
+        nav {
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul li {
+            margin: 0 20px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 20px;
+        }
+
+        h1 {
+            margin-top: 20px;
+        }
+
+        .container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin-top: 50px;
+        }
+
+        .card {
+            width: 250px;
+            background: white;
+            border-radius: 10px;
+            padding: 15px;
+            margin: 15px;
+            box-shadow: 0px 0px 10px gray;
+        }
+
+        .card img {
+            width: 200px;
+            height: 200px;
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+            transition: 0.3s;
+        }
+
+        button {
+            padding: 10px 20px;
+            background: black;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <ul>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="search.html">Products</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+
+    <h1>Watch Brands</h1>
+
+    <input type="text" id="search" placeholder="Search Company">
+
+    <button onclick="sortPrice()">Sort By Price</button>
+
+    <div id="container" class="container"></div>
+
+    <script>
+        const products = [
+            {
+                company: {
+                    name: "Titan",
+                    product: {
+                        name: "Titan Neo",
+                        price: 2500,
+                        image: "img33.png"
+                    }
+                }
+            },
+            {
+                company: {
+                    name: "Fastrack",
+                    product: {
+                        name: "Fastrack Reflex",
+                        price: 1800,
+                        image: "img14.png"
+                    }
+                }
+            },
+            {
+                company: {
+                    name: "Casio",
+                    product: {
+                        name: "Casio G-Shock",
+                        price: 4500,
+                        image: "img15.png"
+                    }
+                }
+            },
+            {
+                company: {
+                    name: "Fossil",
+                    product: {
+                        name: "Fossil Gen 6",
+                        price: 8500,
+                        image: "img16.png"
+                    }
+                }
+            },
+           {
+                company: {
+                    name: "Sonata",
+                    product: {
+                        name: "Sonata gen 6",
+                        price: 5500,
+                        image: "son.png"
+                    }
+                }
+            },
+            {
+                company: {
+                    name: "Apple",
+                    product: {
+                        name: "Apple",
+                        price: 18500,
+                        image: "i.png"
+                    }
+                }
+            } 
+
+        ];
+
+        const container = document.getElementById("container");
+        const search = document.getElementById("search");
+
+        function display(list) {
+
+            container.innerHTML = "";
+
+            list.forEach((item) => {
+
+                container.innerHTML += `
+                <div class="card">
+                    <img src="${item.company.product.image}" alt="">
+                    <h2>${item.company.name}</h2>
+                    <h3>${item.company.product.name}</h3>
+                    <p>Price: ₹${item.company.product.price}</p>
+                    <button>View Product</button>
+                </div>
+                `;
+            });
+        }
+
+        display(products);
+
+        search.addEventListener("input", () => {
+
+            let searchValue = search.value.toLowerCase();
+
+            let filtered = products.filter((item) => {
+
+                return item.company.name
+                    .toLowerCase()
+                    .includes(searchValue);
+
+            });
+
+            display(filtered);
+        });
+
+        function sortPrice() {
+
+            let sorted = [...products].sort((a, b) => {
+
+                return a.company.product.price -
+                    b.company.product.price;
+
+            });
+
+            display(sorted);
+        }
+
+
+
+    </script>
+</body>
+
+</html>

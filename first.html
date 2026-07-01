@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Amazon Lite</h1>
+    <label for="">Enter product price</label>
+    <input type="number" name="" id="price">
+    <br><br>
+    <label for="">Enter product quntity</label>
+    <input type="number" name="" id="qn">
+    <br><br>
+    <button onclick="getBill()">Calculate Bill</button>
+    <br><br>
+    <button onclick="getDiscount1()">Apply 10% Discount</button>
+    <button onclick="getDiscount2()">Apply 20% Discount</button>
+    <button onclick="getDiscount3()">Apply 30% Discount</button>
+    <h2 id="result"></h2>
+
+    <script>
+        var price = document.getElementById("price");
+        var qn = document.getElementById("qn");
+        var result = document.getElementById("result");
+        let totalBill = 0
+        function getBill() {
+            totalBill = (price.value) * (qn.value)
+            result.innerHTML = "Total Bill :" + totalBill
+        }
+        function getDiscount1() {
+            if (totalBill >= 1000) {
+                let dis = totalBill * 0.01
+                result.innerHTML = "Total Bill :" + totalBill + "<br>Discount 10% :" + dis + "<br>Final Bill :" + (totalBill - dis) + "<br><button>proceed to pay"
+            }
+            else {
+                alert("Add items worth" + (1000 - totalBill) + "To your cart")
+            }
+        }
+        function getDiscount2() {
+            if (totalBill >= 2000) {
+                let dis = totalBill * 0.02
+                result.innerHTML = "Total Bill :" + totalBill + "<br>Discount 20% :" + dis + "<br>Final Bill :" + (totalBill - dis) + "<br><button>proceed to pay"
+
+
+            }
+            else {
+                alert("Add items worth" + (2000 - totalBill) + "To your cart")
+            }
+        }
+        function getDiscount3() {
+            if (totalBill >= 1000) {
+                let dis = totalBill * 0.03
+                result.innerHTML = "Total Bill :" + totalBill + "<br>Discount 30% :" + dis + "<br>Final Bill :" + (totalBill - dis) + "<br><button>proceed to pay"
+
+
+            }
+            else {
+                alert("Add items worth" + (3000 - totalBill) + "To your cart")
+            }
+
+
+        }
+
+
+    </script>
+</body>
+
+</html> pp

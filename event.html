@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .box {
+        height: 100px;
+        width: 100px;
+        border: 2px solid;
+        border-radius: 50%;
+        margin-left: 300px;
+    }
+</style>
+
+<body>
+    <div class="box" id="box1" onmouseover="changecolour()" onmouseout="changecolour1()"></div>
+    <div class="box" id="box2" onmouseover="changecolour2()" onmouseout="changecolour3()"></div>
+    <div class="box" id="box3" onmouseover="changecolour4()" onmouseout="changecolour5()"></div>
+
+<script>
+    let box1=document.getElementById("box1")
+    let box2=document.getElementById("box2")
+    let box3=document.getElementById("box3")
+
+function changecolour(){
+    box1.style.backgroundColor="red"
+
+}
+function changecolour1(){
+    box1.style.backgroundColor="white"
+}
+function changecolour2(){
+    box2.style.backgroundColor="yellow"
+}
+function changecolour3(){
+    box2.style.backgroundColor="white"
+}
+function changecolour4(){
+    box3.style.backgroundColor="green"
+}
+function changecolour5(){
+    box3.style.backgroundColor="white"
+}
+</script>
+
+</body>
+
+</html>
